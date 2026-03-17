@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 32px;
+  width: 100%;
+  max-width: 380px;
+  background: #fff;
+}
+
+.title {
+  font-size: 20px;
+  margin: 0 0 4px 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin: 0 0 24px 0;
+  text-align: center;
+  color: #555;
+  font-weight: normal;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.field input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.field input:focus {
+  border-color: #999;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin: 0;
+}
+
+.btn {
+  padding: 9px;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
