@@ -24,8 +24,8 @@ export default function MyPrescriptions() {
       )}
 
       {prescriptions.map((p, i) => (
-        <div className="card mt-3" key={p.id}>
-          <div className="card-header d-flex justify-content-between">
+        <div className="card-glass mb-4" key={p.id}>
+          <div className="card-header-clean">
             <span>Prescription #{i + 1}</span>
             <span className="text-muted" style={{ fontSize: '13px' }}>
               {p.appointment?.appointmentDate} &nbsp;|&nbsp; {p.appointment?.timeSlot}
@@ -33,7 +33,7 @@ export default function MyPrescriptions() {
           </div>
           <div className="card-body">
             {p.notes && <p className="mb-2"><strong>Notes:</strong> {p.notes}</p>}
-            <table className="table table-bordered mb-0">
+            <table className="table-modern mt-3">
               <thead className="table-light">
                 <tr><th>Medicine</th><th>Dosage</th><th>Duration</th></tr>
               </thead>

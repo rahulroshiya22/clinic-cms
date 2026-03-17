@@ -7,7 +7,7 @@ export default function ReceptionistDashboard() {
     <div className="container mt-4">
       <h4>Receptionist Dashboard</h4>
       <p className="text-muted">Welcome, {user.name}</p>
-      <Link to="/receptionist/queue" className="btn btn-dark mt-2">
+      <Link to="/receptionist/queue" className="btn-modern btn-primary-modern mt-3">
         Go to Queue Management
       </Link>
     </div>

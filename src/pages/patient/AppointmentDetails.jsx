@@ -27,10 +27,10 @@ export default function AppointmentDetails() {
       <h4 className="mt-2">Appointment Details</h4>
 
       {/* Basic Info */}
-      <div className="card mt-3" style={{ maxWidth: '500px' }}>
-        <div className="card-header">Appointment Info</div>
+      <div className="card-glass mt-3" style={{ maxWidth: '500px' }}>
+        <div className="card-header-clean">Appointment Info</div>
         <div className="card-body p-0">
-          <table className="table table-bordered mb-0">
+          <table className="table-modern">
             <tbody>
               <tr><th width="140">Date</th><td>{appt.appointmentDate}</td></tr>
               <tr><th>Time Slot</th><td>{appt.timeSlot}</td></tr>
@@ -42,10 +42,10 @@ export default function AppointmentDetails() {
 
       {/* Queue Info */}
       {queueEntry && (
-        <div className="card mt-3" style={{ maxWidth: '500px' }}>
-          <div className="card-header">Queue Info</div>
+        <div className="card-glass mt-3" style={{ maxWidth: '500px' }}>
+          <div className="card-header-clean">Queue Info</div>
           <div className="card-body p-0">
-            <table className="table table-bordered mb-0">
+            <table className="table-modern">
               <tbody>
                 <tr><th width="140">Token Number</th><td><strong>#{queueEntry.tokenNumber}</strong></td></tr>
                 <tr><th>Queue Status</th><td>{queueEntry.status}</td></tr>
@@ -56,13 +56,13 @@ export default function AppointmentDetails() {
       )}
 
       {/* Prescription */}
-      <div className="card mt-3">
-        <div className="card-header">Prescription</div>
+      <div className="card-glass mt-3">
+        <div className="card-header-clean">Prescription</div>
         <div className="card-body">
           {prescription ? (
             <>
               {prescription.notes && <p><strong>Notes:</strong> {prescription.notes}</p>}
-              <table className="table table-bordered">
+              <table className="table-modern">
                 <thead className="table-light">
                   <tr><th>Medicine</th><th>Dosage</th><th>Duration</th></tr>
                 </thead>
@@ -82,11 +82,11 @@ export default function AppointmentDetails() {
       </div>
 
       {/* Report */}
-      <div className="card mt-3 mb-4">
-        <div className="card-header">Report</div>
-        <div className="card-body">
+      <div className="card-glass mt-3 mb-4">
+        <div className="card-header-clean">Report</div>
+        <div className="card-body p-0">
           {report ? (
-            <table className="table table-bordered mb-0">
+            <table className="table-modern">
               <tbody>
                 <tr><th width="160">Diagnosis</th><td>{report.diagnosis}</td></tr>
                 {report.testRecommended && <tr><th>Tests</th><td>{report.testRecommended}</td></tr>}

@@ -51,16 +51,16 @@ export default function QueueManagement() {
     <div className="container mt-4">
       <h4>Queue Management</h4>
 
-      <div className="d-flex align-items-center gap-2 mt-3">
-        <label className="form-label mb-0">Date:</label>
+      <div className="d-flex align-items-center gap-3 mt-4">
+        <label className="form-label-modern mb-0">Date:</label>
         <input
           type="date"
-          className="form-control"
-          style={{ width: '180px' }}
+          className="form-control-modern"
+          style={{ width: '200px' }}
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
-        <button className="btn btn-outline-secondary btn-sm" onClick={loadQueue}>Refresh</button>
+        <button className="btn-modern btn-outline-modern" onClick={loadQueue}>Refresh</button>
       </div>
 
       {error && <div className="alert alert-danger mt-3">{error}</div>}
@@ -70,8 +70,9 @@ export default function QueueManagement() {
       ) : queue.length === 0 ? (
         <p className="mt-3 text-muted">No queue entries for {date}.</p>
       ) : (
-        <div className="table-responsive mt-3">
-          <table className="table table-bordered">
+        <div className="table-modern-wrapper mt-4">
+          <div className="table-responsive">
+            <table className="table-modern">
             <thead className="table-light">
               <tr>
                 <th>Token</th>
@@ -96,7 +97,7 @@ export default function QueueManagement() {
                       ) : transitions.map((s) => (
                         <button
                           key={s}
-                          className="btn btn-sm btn-outline-dark me-1"
+                          className="btn-modern btn-outline-modern btn-sm me-2"
                           disabled={updating[q.id]}
                           onClick={() => handleUpdate(q.id, s)}
                         >
@@ -109,6 +110,7 @@ export default function QueueManagement() {
               })}
             </tbody>
           </table>
+        </div>
         </div>
       )}
     </div>

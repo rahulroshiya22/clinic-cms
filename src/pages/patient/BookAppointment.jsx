@@ -44,23 +44,23 @@ export default function BookAppointment() {
     <div className="container mt-4">
       <h4>Book Appointment</h4>
 
-      <div className="card mt-3" style={{ maxWidth: '420px' }}>
-        <div className="card-body">
+      <div className="card-glass mt-3" style={{ maxWidth: '420px' }}>
+        <div className="card-body p-4">
           <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label className="form-label">Select Date</label>
+            <div className="mb-4">
+              <label className="form-label-modern">Select Date</label>
               <input
                 type="date"
-                className="form-control"
+                className="form-control-modern"
                 value={date}
-                min={today}
                 onChange={(e) => setDate(e.target.value)}
                 required
+                min={new Date().toISOString().split('T')[0]}
               />
             </div>
-            <div className="mb-3">
-              <label className="form-label">Select Time Slot (15 min)</label>
-              <select className="form-select" value={slot} onChange={(e) => setSlot(e.target.value)}>
+            <div className="mb-4">
+              <label className="form-label-modern">Select Time Slot (15 min)</label>
+              <select className="form-control-modern" value={slot} onChange={(e) => setSlot(e.target.value)}>
                 {SLOTS.map((s) => (
                   <option key={s} value={s}>{s}</option>
                 ))}
@@ -70,7 +70,7 @@ export default function BookAppointment() {
             {error && <div className="alert alert-danger py-2">{error}</div>}
             {success && <div className="alert alert-success py-2">{success}</div>}
 
-            <button type="submit" className="btn btn-dark" disabled={loading}>
+            <button type="submit" className="btn-modern btn-primary-modern w-100 mt-2" disabled={loading}>
               {loading ? 'Booking...' : 'Book Appointment'}
             </button>
           </form>

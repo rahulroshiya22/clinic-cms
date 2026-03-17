@@ -32,38 +32,38 @@ export default function Login() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh', background: '#f8f9fa' }}>
-      <div className="card shadow-sm" style={{ width: '380px' }}>
-        <div className="card-body p-4">
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh', padding: '1rem' }}>
+      <div className="card-glass" style={{ width: '100%', maxWidth: '420px' }}>
+        <div className="card-body">
           <h4 className="card-title text-center mb-1">Clinic Queue Management</h4>
           <p className="text-center text-muted mb-4" style={{ fontSize: '14px' }}>Login to your account</p>
 
           <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label className="form-label">Email address</label>
+            <div className="mb-4">
+              <label className="form-label-modern">Email Address</label>
               <input
                 type="email"
-                className="form-control"
+                className="form-control-modern"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter email"
+                placeholder="enrollment@darshan.ac.in"
                 required
               />
             </div>
-            <div className="mb-3">
-              <label className="form-label">Password</label>
+            <div className="mb-4">
+              <label className="form-label-modern">Password</label>
               <input
                 type="password"
-                className="form-control"
+                className="form-control-modern"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
                 required
               />
             </div>
-            {error && <div className="alert alert-danger py-2">{error}</div>}
-            <button type="submit" className="btn btn-dark w-100" disabled={loading}>
-              {loading ? 'Logging in...' : 'Login'}
+            {error && <div className="p-3 mb-4 rounded" style={{ background: '#FEE2E2', color: '#991B1B', border: '1px solid #F87171', fontSize: '0.9rem' }}>{error}</div>}
+            <button type="submit" className="btn-modern btn-primary-modern w-100" disabled={loading} style={{ padding: '0.8rem' }}>
+              {loading ? 'Authenticating...' : 'Sign In'}
             </button>
           </form>
         </div>

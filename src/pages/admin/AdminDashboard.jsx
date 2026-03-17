@@ -21,10 +21,10 @@ export default function AdminDashboard() {
       {error && <div className="alert alert-danger">{error}</div>}
 
       {clinic && (
-        <div className="card mt-3" style={{ maxWidth: '500px' }}>
-          <div className="card-header">Clinic Information</div>
+        <div className="card-glass mt-3" style={{ maxWidth: '500px' }}>
+          <div className="card-header-clean">Clinic Information</div>
           <div className="card-body p-0">
-            <table className="table table-bordered mb-0">
+            <table className="table-modern">
               <tbody>
                 <tr><th width="160">Clinic Name</th><td>{clinic.name}</td></tr>
                 <tr><th>Clinic Code</th><td>{clinic.code}</td></tr>

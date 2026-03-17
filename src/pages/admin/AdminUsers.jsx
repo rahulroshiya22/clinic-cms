@@ -22,16 +22,17 @@ export default function AdminUsers() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className="table-responsive mt-3">
-          <table className="table table-bordered table-hover">
-            <thead className="table-light">
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Phone</th>
-              </tr>
-            </thead>
+        <div className="table-modern-wrapper mt-3">
+          <div className="table-responsive">
+            <table className="table-modern">
+              <thead className="table-light">
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Phone</th>
+                </tr>
+              </thead>
             <tbody>
               {users.length === 0 ? (
                 <tr><td colSpan={4} className="text-center text-muted">No users found.</td></tr>
@@ -41,10 +42,10 @@ export default function AdminUsers() {
                     <td>{u.name}</td>
                     <td>{u.email}</td>
                     <td>
-                      <span className={`badge ${
-                        u.role === 'admin' ? 'bg-danger' :
-                        u.role === 'doctor' ? 'bg-primary' :
-                        u.role === 'receptionist' ? 'bg-success' : 'bg-secondary'
+                      <span className={`badge-modern ${
+                        u.role === 'admin' ? 'badge-red' :
+                        u.role === 'doctor' ? 'badge-blue' :
+                        u.role === 'receptionist' ? 'badge-green' : 'badge-gray'
                       }`}>
                         {u.role}
                       </span>
@@ -55,6 +56,7 @@ export default function AdminUsers() {
               )}
             </tbody>
           </table>
+        </div>
         </div>
       )}
     </div>

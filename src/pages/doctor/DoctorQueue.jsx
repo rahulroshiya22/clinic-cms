@@ -75,7 +75,7 @@ export default function DoctorQueue() {
     <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center">
         <h4>Today's Queue</h4>
-        <button className="btn btn-sm btn-outline-secondary" onClick={loadQueue}>Refresh</button>
+        <button className="btn-modern btn-outline-modern" onClick={loadQueue}>Refresh</button>
       </div>
 
       {error && <div className="alert alert-danger mt-2">{error}</div>}
@@ -86,7 +86,8 @@ export default function DoctorQueue() {
         <div className="row mt-3">
           {/* Left: patient list */}
           <div className="col-md-5">
-            <table className="table table-bordered table-hover">
+            <div className="table-modern-wrapper">
+              <table className="table-modern">
               <thead className="table-light">
                 <tr><th>Token</th><th>Patient</th><th>Status</th><th></th></tr>
               </thead>
@@ -99,38 +100,39 @@ export default function DoctorQueue() {
                     <td>{q.patientName}</td>
                     <td>{q.status}</td>
                     <td>
-                      <button className="btn btn-sm btn-dark" onClick={() => selectPatient(q)}>
+                      <button className="btn-modern btn-primary-modern btn-sm" onClick={() => selectPatient(q)}>
                         Select
                       </button>
                     </td>
                   </tr>
                 ))}
               </tbody>
-            </table>
+              </table>
+            </div>
           </div>
 
           {/* Right: forms */}
           {selected && (
             <div className="col-md-7">
-              <h5>Patient: {selected.patientName} &nbsp; <span className="badge bg-secondary">Token #{selected.tokenNumber}</span></h5>
+              <h5 className="mb-4">Patient: {selected.patientName} &nbsp; <span className="badge-modern badge-blue">Token #{selected.tokenNumber}</span></h5>
 
               {/* Prescription form */}
-              <div className="card mt-3">
-                <div className="card-header">Add Prescription</div>
+              <div className="card-glass mb-4">
+                <div className="card-header-clean">Add Prescription</div>
                 <div className="card-body">
                   <form onSubmit={submitPrescription}>
                     {medicines.map((m, i) => (
-                      <div className="row g-2 mb-2" key={i}>
+                      <div className="row g-2 mb-3" key={i}>
                         <div className="col">
-                          <input className="form-control form-control-sm" placeholder="Medicine name"
+                          <input className="form-control-modern" placeholder="Medicine name"
                             value={m.name} onChange={(e) => handleMedChange(i, 'name', e.target.value)} required />
                         </div>
                         <div className="col">
-                          <input className="form-control form-control-sm" placeholder="Dosage"
+                          <input className="form-control-modern" placeholder="Dosage"
                             value={m.dosage} onChange={(e) => handleMedChange(i, 'dosage', e.target.value)} required />
                         </div>
                         <div className="col">
-                          <input className="form-control form-control-sm" placeholder="Duration"
+                          <input className="form-control-modern" placeholder="Duration"
                             value={m.duration} onChange={(e) => handleMedChange(i, 'duration', e.target.value)} required />
                         </div>
                         <div className="col-auto">
@@ -143,9 +145,9 @@ export default function DoctorQueue() {
 
                     <button type="button" className="btn btn-sm btn-link ps-0" onClick={addMed}>+ Add Medicine</button>
 
-                    <div className="mb-3 mt-2">
-                      <label className="form-label">Notes</label>
-                      <input className="form-control" placeholder="e.g. After food"
+                    <div className="mb-4 mt-3">
+                      <label className="form-label-modern">Notes</label>
+                      <input className="form-control-modern" placeholder="e.g. After food"
                         value={notes} onChange={(e) => setNotes(e.target.value)} />
                     </div>
 
@@ -154,7 +156,7 @@ export default function DoctorQueue() {
                         {pressMsg}
                       </div>
                     )}
-                    <button type="submit" className="btn btn-dark btn-sm" disabled={pressLoading}>
+                    <button type="submit" className="btn btn-primary btn-custom btn-sm" disabled={pressLoading}>
                       {pressLoading ? 'Saving...' : 'Save Prescription'}
                     </button>
                   </form>
@@ -162,23 +164,23 @@ export default function DoctorQueue() {
               </div>
 
               {/* Report form */}
-              <div className="card mt-3">
-                <div className="card-header">Add Report</div>
+              <div className="card-glass mb-4">
+                <div className="card-header-clean">Add Report</div>
                 <div className="card-body">
                   <form onSubmit={submitReport}>
-                    <div className="mb-3">
-                      <label className="form-label">Diagnosis <span className="text-danger">*</span></label>
-                      <input className="form-control" placeholder="e.g. Viral Fever"
+                    <div className="mb-4">
+                      <label className="form-label-modern">Diagnosis <span className="text-danger">*</span></label>
+                      <input className="form-control-modern" placeholder="e.g. Viral Fever"
                         value={diagnosis} onChange={(e) => setDiagnosis(e.target.value)} required />
                     </div>
-                    <div className="mb-3">
-                      <label className="form-label">Tests Recommended</label>
-                      <input className="form-control" placeholder="e.g. Blood Test"
+                    <div className="mb-4">
+                      <label className="form-label-modern">Tests Recommended</label>
+                      <input className="form-control-modern" placeholder="e.g. Blood Test"
                         value={tests} onChange={(e) => setTests(e.target.value)} />
                     </div>
-                    <div className="mb-3">
-                      <label className="form-label">Remarks</label>
-                      <input className="form-control" placeholder="e.g. Rest for 3 days"
+                    <div className="mb-4">
+                      <label className="form-label-modern">Remarks</label>
+                      <input className="form-control-modern" placeholder="e.g. Rest for 3 days"
                         value={remarks} onChange={(e) => setRemarks(e.target.value)} />
                     </div>
 
@@ -187,7 +189,7 @@ export default function DoctorQueue() {
                         {repMsg}
                       </div>
                     )}
-                    <button type="submit" className="btn btn-dark btn-sm" disabled={repLoading}>
+                    <button type="submit" className="btn btn-primary btn-custom btn-sm" disabled={repLoading}>
                       {repLoading ? 'Saving...' : 'Save Report'}
                     </button>
                   </form>

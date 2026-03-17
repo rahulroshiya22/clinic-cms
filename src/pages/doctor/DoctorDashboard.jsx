@@ -7,7 +7,7 @@ export default function DoctorDashboard() {
     <div className="container mt-4">
       <h4>Doctor Dashboard</h4>
       <p className="text-muted">Welcome, Dr. {user.name}</p>
-      <Link to="/doctor/queue" className="btn btn-dark mt-2">
+      <Link to="/doctor/queue" className="btn-modern btn-primary-modern mt-3">
         View Today's Queue
       </Link>
     </div>

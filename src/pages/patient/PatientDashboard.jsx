@@ -20,9 +20,9 @@ export default function PatientDashboard() {
         {cards.map((c) => (
           <div className="col-sm-6 col-md-3 mb-3" key={c.to}>
             <Link to={c.to} className="text-decoration-none">
-              <div className={`card border-${c.color} text-center h-100`}>
+              <div className="card-glass card-hover h-100 text-center p-3 text-decoration-none">
                 <div className="card-body">
-                  <h6 className={`card-title text-${c.color}`}>{c.title}</h6>
+                  <h6 className="card-title fw-semibold text-primary mb-1">{c.title}</h6>
                   <p className="card-text text-muted" style={{ fontSize: '13px' }}>{c.desc}</p>
                 </div>
               </div>
