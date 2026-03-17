@@ -26,13 +26,18 @@ export default function AdminDashboard() {
           <div className="card-body p-0">
             <table className="table table-bordered mb-0">
               <tbody>
-                <tr><th width="160">Name</th><td>{clinic.name}</td></tr>
-                <tr><th>Code</th><td>{clinic.code}</td></tr>
-                {clinic.address && <tr><th>Address</th><td>{clinic.address}</td></tr>}
-                {clinic.totalDoctors !== undefined && <tr><th>Doctors</th><td>{clinic.totalDoctors}</td></tr>}
-                {clinic.totalPatients !== undefined && <tr><th>Patients</th><td>{clinic.totalPatients}</td></tr>}
-                {clinic.totalReceptionists !== undefined && <tr><th>Receptionists</th><td>{clinic.totalReceptionists}</td></tr>}
-                {clinic.totalAppointments !== undefined && <tr><th>Appointments</th><td>{clinic.totalAppointments}</td></tr>}
+                <tr><th width="160">Clinic Name</th><td>{clinic.name}</td></tr>
+                <tr><th>Clinic Code</th><td>{clinic.code}</td></tr>
+                
+                {clinic.userCount !== undefined && (
+                  <tr><th>Total Users</th><td>{clinic.userCount} <span className="text-muted" style={{fontSize: '12px'}}>(including Admin)</span></td></tr>
+                )}
+                {clinic.appointmentCount !== undefined && (
+                  <tr><th>Total Appointments</th><td>{clinic.appointmentCount}</td></tr>
+                )}
+                {clinic.queueCount !== undefined && (
+                  <tr><th>Total Queues</th><td>{clinic.queueCount}</td></tr>
+                )}
               </tbody>
             </table>
           </div>
